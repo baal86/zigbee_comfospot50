@@ -1947,7 +1947,7 @@
 				)
 			)
 			(pin power_in line
-				(at -2.54 -8.89 90)
+				(at -3.81 -8.89 90)
 				(length 2.54)
 				(name "GND"
 					(effects
@@ -1965,7 +1965,7 @@
 				)
 			)
 			(pin power_in line
-				(at 2.54 -8.89 90)
+				(at -1.27 -8.89 90)
 				(length 2.54)
 				(name "GND"
 					(effects
@@ -1975,6 +1975,42 @@
 					)
 				)
 				(number "13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 1.27 -8.89 90)
+				(length 2.54)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "29"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 3.81 -8.89 90)
+				(length 2.54)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "30"
 					(effects
 						(font
 							(size 1.27 1.27)
