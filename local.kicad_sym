@@ -26,7 +26,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_THT_Wurth:J_Wurth_WR-MM_690357101472"
+		(property "Footprint" "J_Wurth_WR-MM_690357101472"
 			(at 0 15.24 0)
 			(effects
 				(font
@@ -750,7 +750,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(symbol "690368191472"
+	(symbol "690367191472"
 		(pin_names
 			(hide yes)
 		)
@@ -765,7 +765,7 @@
 				)
 			)
 		)
-		(property "Value" "690368191472"
+		(property "Value" "690367191472"
 			(at 0 -12.7 0)
 			(effects
 				(font
@@ -774,7 +774,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_THT_Wurth:J_Wurth_WR-MM_690368191472"
+		(property "Footprint" "J_Wurth_WR-MM_690367191472"
 			(at 0 15.24 0)
 			(effects
 				(font
@@ -783,7 +783,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.we-online.com/en/components/products/datasheet/690368191472?ki"
+		(property "Datasheet" "https://www.we-online.com/en/components/products/datasheet/690367191472?ki"
 			(at 45.72 12.7 0)
 			(effects
 				(font
@@ -792,7 +792,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Female Angled Connector with Latch & with Polarization"
+		(property "Description" "Female Connector with Latch & w/o Polarization"
 			(at 0 0 0)
 			(effects
 				(font
@@ -873,7 +873,7 @@
 				(hide yes)
 			)
 		)
-		(property "Type" "Angled"
+		(property "Type" "Straight"
 			(at 45.72 -10.16 0)
 			(effects
 				(font
@@ -891,7 +891,7 @@
 				(hide yes)
 			)
 		)
-		(property "Polarization" "Yes"
+		(property "Polarization" "No"
 			(at 45.72 -15.24 0)
 			(effects
 				(font
@@ -954,7 +954,7 @@
 				(hide yes)
 			)
 		)
-		(symbol "690368191472_1_1"
+		(symbol "690367191472_1_1"
 			(rectangle
 				(start -17.78 2.54)
 				(end 17.78 -2.54)
@@ -1556,7 +1556,7 @@
 			)
 		)
 		(property "Value" "ESP32-H2-WROOM-02C"
-			(at 0 0 0)
+			(at 0.508 26.416 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1582,7 +1582,7 @@
 			)
 		)
 		(property "Description" "ESP32-H2 Solderable Module"
-			(at 0 0 0)
+			(at 1.016 23.368 0)
 			(effects
 				(font
 					(size 1.27 1.27)
