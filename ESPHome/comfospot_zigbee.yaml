@@ -35,27 +35,6 @@ output:
         number: GPIO0
         mode: INPUT_OUTPUT_OPEN_DRAIN
 
-#fan:
-#  - platform: template
-#    id: comfospot
-#    speed_count: 3
-#    on_state:
-#        - repeat:
-#            count: 4
-#            then:
-#                - output.turn_on: out_down
-#                - delay: 200ms
-#                - output.turn_off: out_down
-#                - delay: 200ms
-#        - repeat:
-#            count: !lambda 'if(x->state){return x->speed +1;} else {return 1;}'
-#            then:
-#                - output.turn_on: out_up
-#                - delay: 200ms
-#                - output.turn_off: out_up
-#                - delay: 200ms
-
-
 zigbee:
   id: "zb"
   endpoints:
