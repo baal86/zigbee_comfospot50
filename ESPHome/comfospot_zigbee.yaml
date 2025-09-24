@@ -1,0 +1,101 @@
+esphome:
+  name: comfospot-zigbee
+  friendly_name: "Comfospot 50 Zigbee"
+
+esp32:
+  board: esp32-h2-devkitm-1
+  variant: ESP32H2
+  partitions: partitions_zb.csv
+  framework:
+    type: esp-idf 
+
+logger:
+  level: DEBUG
+
+external_components:
+  - source:
+      type: git
+      url: https://github.com/luar123/zigbee_esphome
+      ref: master
+    refresh: 0s
+    components: [zigbee]
+
+output:
+  - platform: gpio
+    id: out_up
+    pin:
+        inverted: true
+        number: GPIO1
+        mode: INPUT_OUTPUT_OPEN_DRAIN
+
+  - platform: gpio
+    id: out_down
+    pin:
+        inverted: true
+        number: GPIO0
+        mode: INPUT_OUTPUT_OPEN_DRAIN
+
+#fan:
+#  - platform: template
+#    id: comfospot
+#    speed_count: 3
+#    on_state:
+#        - repeat:
+#            count: 4
+#            then:
+#                - output.turn_on: out_down
+#                - delay: 200ms
+#                - output.turn_off: out_down
+#                - delay: 200ms
+#        - repeat:
+#            count: !lambda 'if(x->state){return x->speed +1;} else {return 1;}'
+#            then:
+#                - output.turn_on: out_up
+#                - delay: 200ms
+#                - output.turn_off: out_up
+#                - delay: 200ms
+
+
+zigbee:
+  id: "zb"
+  endpoints:
+    - device_type: HEATING_COOLING_UNIT
+      num: 1
+      clusters:
+        - id: FAN_CONTROL
+          attributes:
+            - attribute_id: 0x0000
+              type: 8BIT_ENUM
+              on_value:
+                - logger.log: 
+                    format: "Received state %d" 
+                    args: [!lambda "x"]
+                - repeat:
+                    count: 4
+                    then:
+                    - output.turn_on: out_down
+                    - delay: 200ms
+                    - output.turn_off: out_down
+                    - delay: 200ms
+                - repeat:
+                    count: !lambda "return x;"
+                    then:
+                    - output.turn_on: out_up
+                    - delay: 200ms
+                    - output.turn_off: out_up
+                    - delay: 200ms
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: 9
+      mode:
+        input: true
+        pullup: true
+      inverted: true
+    id: button_zb_reset
+    on_click:
+      min_length: 3s
+      max_length: 20s
+      then:
+        - zigbee.reset
