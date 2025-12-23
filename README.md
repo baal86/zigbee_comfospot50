@@ -1,6 +1,8 @@
 # Zigbee Comfospot 50
 Hardware module to integrate Comfospot 50 ventilation system with ESP32-H2 zigbee enabled controller. Heavily based on https://github.com/lorenzspenger/comfospot-50 but using the ESP32-H2 and Zigbee.
 
+![PCB Rendering](Hardware/pcb_render.png)
+
 ## Hardware 
 Contains a Kicad project to produce the hardware module that plugs inbetwen the Comfospot 50 main board and the user interface panel.
 
