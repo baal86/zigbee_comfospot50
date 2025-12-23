@@ -51,8 +51,10 @@ export default {
     fromZigbee: [fzHvacFanControl],
     toZigbee: [tzHvacFanControl],
     exposes: [
-        e.fan()
-            .withModes(['off', 'low', 'medium', 'high'])
-            .withDescription('Fan control'),
+//        e.fan()
+//            .withModes(['off', 'low', 'medium', 'high'])
+//            .withDescription('Fan control'),
+          e.enum('fan_mode', ea.STATE_SET, ['off', 'low', 'medium', 'high'])
+              .withDescription('Fan mode'),
     ],
 };
